@@ -1,7 +1,17 @@
 feather.replace()
 const resultTextArea = document.getElementById('result');
+let isTrue = true;
 
-const insert = (num) => resultTextArea.innerText += num
+const insert = (num) => {
+  if (isTrue) {
+    resultTextArea.innerText += num;
+    isTrue = true
+  } else {
+    resultTextArea.innerText = '';
+    resultTextArea.innerText += num;
+    isTrue = true;
+  }
+}
 
 const clean = () => resultTextArea.innerText = '';
 
@@ -11,5 +21,6 @@ const calculate = () => {
   const result = resultTextArea.innerText
   if (result) {
     resultTextArea.innerText = eval(result)
+    isTrue = false;
   }
 }
