@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <title>Document</title>
+  </head>
+  <body>
+    <header></header>
+    <main class="fundo">
+      <div class="calc">
+        <h1>Calculadora</h1>
+        <p id="result"></p>
+        <table>
+          <tr>
+            <td><button class="button" onclick="clean()">C</button></td>
+            <td><button class="button"><i data-feather="arrow-left" class="icon-24" onclick="back()"></i></button></td>
+            <td><button class="button" onclick="insert('/')"><i data-feather="divide" class="icon-24"></i></button></td>
+            <td><button class="button" onclick="insert('*')"><i data-feather="x" class="icon-24"></i></button></td>
+          </tr>
+          <tr>
+            <td><button class="button" onclick="insert('7')">7</button></td>
+            <td><button class="button" onclick="insert('8')">8</button></td>
+            <td><button class="button" onclick="insert('9')">9</button></td>
+            <td><button class="button" onclick="insert('-')"><i data-feather="minus" class="icon-24"></i></button></td>
+          </tr>
+          <tr>
+            <td><button class="button" onclick="insert('4')">4</button></td>
+            <td><button class="button" onclick="insert('5')">5</button></td>
+            <td><button class="button" onclick="insert('6')">6</button></td>
+            <td><button class="button" onclick="insert('+')"><i data-feather="plus" class="icon-24"></i></button></td>
+          </tr>
+          <tr>
+            <td><button class="button" onclick="insert('1')">1</button></td>
+            <td><button class="button" onclick="insert('2')">2</button></td>
+            <td><button class="button" onclick="insert('3')">3</button></td>
+            <td rowspan="2"><button class="button equal" onclick="calculate()">=</button></td>
+          </tr>
+          <tr>
+            <td colspan="2"><button class="button zero" onclick="insert('0')">0</button></td>
+            <td><button class="button" onclick="insert('.')">.</button></td>
+          </tr>
+        </table>
+      </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="src/script.js"></script>
+  </body>
+</html>
