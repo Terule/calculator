@@ -1,84 +1,79 @@
 * {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-.icon-10 {
-  width: 10px;
-  height: 10px;
+body {
+  background: linear-gradient(to right, rgb(40, 44, 52), rgb(1, 52, 231));
 }
 
-.icon-24 {
-  width: 24px;
-  height: 24px;
+.grid-container {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
 }
 
-.icon-48 {
-  width: 48px;
-  height: 48px;
-}
-
-.fundo {
+.grid-container > button {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-image: linear-gradient(45deg, rgb(40, 44, 52), rgb(1, 52, 231));
-  color: white;
-  font-family: roboto;
-  font-weight: 400;
-}
-
-.calc {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: rgba(30, 30, 30, 0.9);
-  border-radius: 10px;
-  padding: 15px;
-}
-
-.button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 50px;
-  width: 50px;
-  font-size: 25px;
   cursor: pointer;
-  color: white;
-  margin: 2px;
-  border: 0;
-  background-color: rgb(37, 37, 38);
-  border-radius: 5px;
+  font-size: 2rem;
+  border: none;
+  outline: none;
+  background-color: #111;
+  color: #eee;
+  transition: all 200ms ease-in-out;
 }
 
-.button:hover {
-  background-image: linear-gradient(45deg, rgb(40, 44, 52), rgb(1, 52, 231));
+.grid-container > button:hover {
+  background-color: #eee;
+  color: #111;
 }
 
-.equal {
-  height: 106px;
+.grid-container > .operator {
+  background: rgb(1, 52, 231);
 }
 
-.zero {
-  width: 106px;
+.span-two {
+  grid-column: span 2;
 }
 
-#result {
+.grid-container > .output {
+  grid-column: 1 / -1;
+  background: #222;
   display: flex;
-  width: 218px;
-  height: 35px;
-  margin: 10px;
-  border-radius: 5px;
-  background-color: white;
-  text-align: right;
-  padding: 5px;
-  color: black;
-  font-size: 20px;
-  font-weight: 500;
-  align-items: center;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.grid-container > .output > .previous-operand {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.5rem;
+}
+
+.grid-container > .output > .current-operand {
+  color: white;
+  font-size: 2.5rem;
+}
+
+.icon-medium {
+  width: 2rem;
+  height: 2rem;
+  font-weight: bold;
+}
+
+.icon-large {
+  width: 2.5rem;
+  height: 2.5rem;
 }
